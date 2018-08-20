@@ -15,6 +15,9 @@
 
   <name>Activiti :: Runtime API Parent</name>
   <packaging>pom</packaging>
+  <properties>
+    <activiti-api.version>${project.version}</activiti-api.version>
+  </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
