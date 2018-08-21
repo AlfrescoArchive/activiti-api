@@ -15,9 +15,6 @@
 
   <name>Activiti :: Runtime API Parent</name>
   <packaging>pom</packaging>
-  <properties>
-    <activiti-api.version>${project.version}</activiti-api.version>
-  </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -69,6 +66,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.version>1.8</java.version>
     <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+    <activiti-api.version>${project.version}</activiti-api.version>
   </properties>
   <build>
     <plugins>
