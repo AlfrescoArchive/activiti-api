@@ -6,14 +6,13 @@
     <groupId>org.activiti.build</groupId>
     <artifactId>activiti-parent</artifactId>
     <version>7.0.0-SNAPSHOT</version> <!-- using fixed version for CI/CD -->
-    <!--<version>7.0.0-SNAPSHOT</version>
-    <relativePath/>-->
+    <relativePath/>
   </parent>
   <groupId>org.activiti.api</groupId>
   <artifactId>activiti-api</artifactId>
   <version>7.0.0-SNAPSHOT</version>
 
-  <name>Activiti :: Runtime API Parent</name>
+  <name>Activiti API :: Parent</name>
   <packaging>pom</packaging>
   <dependencyManagement>
     <!-- This duplicates activiti-api-dependencies module but we can't import that module here as this is its parent-->
