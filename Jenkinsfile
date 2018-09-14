@@ -48,6 +48,10 @@ pipeline {
             // so we can retrieve the version in later steps
             sh "echo \$(jx-release-version) > VERSION"
             sh "mvn versions:set -DnewVersion=\$(cat VERSION)"
+            sh "git add --all"
+            sh "git commit -m 'release \$(cat VERSION)' --allow-empty"
+            sh "git tag -fa v\$(cat VERSION) -m 'Release version \$(cat VERSION)'"
+            sh "git push origin v\$(cat VERSION)"
           }
          // dir ('./charts/activiti-api') {
          //   container('maven') {
@@ -59,6 +63,10 @@ pipeline {
 
             sh 'export VERSION=`cat VERSION`' // && skaffold build -f skaffold.yaml'
 
+            sh "git config --global credential.helper store"
+
+            sh "jx step git credentials"
+            sh "updatebot push-version --kind maven org.activiti.api:activiti-api-dependencies \$(cat VERSION)"
 
           //  sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
           }
