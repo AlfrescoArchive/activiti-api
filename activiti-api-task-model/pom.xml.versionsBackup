@@ -21,10 +21,10 @@
   <parent>
     <groupId>org.activiti.api</groupId>
     <artifactId>activiti-api</artifactId>
-    <version>7.0.6</version>
+    <version>7.0.0-SNAPSHOT</version>
   </parent>
-  <artifactId>activiti-api-process-model</artifactId>
-  <name>Activiti API :: Process Model API</name>
+  <artifactId>activiti-api-task-model</artifactId>
+  <name>Activiti API :: Task Model</name>
   <dependencies>
     <dependency>
       <groupId>org.activiti.api</groupId>
