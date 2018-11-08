@@ -59,4 +59,11 @@ public abstract class RuntimeEventImpl<ENTITY_TYPE, EVENT_TYPE extends Enum<?>> 
     public Long getTimestamp() {
         return timestamp;
     }
+
+    @Override
+    public String toString() {
+        return "id='" + id + '\'' +
+                ", timestamp=" + timestamp +
+                ", entity=" + entity;
+    }
 }

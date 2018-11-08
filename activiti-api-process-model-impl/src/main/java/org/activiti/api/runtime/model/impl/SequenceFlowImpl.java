@@ -82,4 +82,15 @@ public class SequenceFlowImpl extends BPMNElementImpl implements SequenceFlow {
         this.targetActivityType = targetActivityType;
     }
 
+    @Override
+    public String toString() {
+        return "SequenceFlowImpl{" +
+                "sourceActivityElementId='" + sourceActivityElementId + '\'' +
+                ", sourceActivityName='" + sourceActivityName + '\'' +
+                ", sourceActivityType='" + sourceActivityType + '\'' +
+                ", targetActivityElementId='" + targetActivityElementId + '\'' +
+                ", targetActivityName='" + targetActivityName + '\'' +
+                ", targetActivityType='" + targetActivityType + '\'' +
+                '}';
+    }
 }

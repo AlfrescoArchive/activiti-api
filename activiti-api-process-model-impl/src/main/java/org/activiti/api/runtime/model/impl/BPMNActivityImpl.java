@@ -1,8 +1,8 @@
 package org.activiti.api.runtime.model.impl;
 
-import java.util.Objects;
-
 import org.activiti.api.process.model.BPMNActivity;
+
+import java.util.Objects;
 
 public class BPMNActivityImpl extends BPMNElementImpl implements BPMNActivity {
 
@@ -51,18 +51,27 @@ public class BPMNActivityImpl extends BPMNElementImpl implements BPMNActivity {
         }
         BPMNActivityImpl that = (BPMNActivityImpl) o;
         return Objects.equals(elementId,
-                              that.elementId) &&
+                that.elementId) &&
                 Objects.equals(activityName,
-                               that.activityName) &&
+                        that.activityName) &&
                 Objects.equals(activityType,
-                               that.activityType);
+                        that.activityType);
     }
 
     @Override
     public int hashCode() {
 
         return Objects.hash(elementId,
-                            activityName,
-                            activityType);
+                activityName,
+                activityType);
+    }
+
+    @Override
+    public String toString() {
+        return "BPMNActivityImpl{" +
+                "activityName='" + activityName + '\'' +
+                ", activityType='" + activityType + '\'' +
+                ", elementId='" + elementId + '\'' +
+                '}';
     }
 }
