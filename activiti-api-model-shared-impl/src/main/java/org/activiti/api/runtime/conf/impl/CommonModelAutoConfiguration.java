@@ -16,12 +16,15 @@
 
 package org.activiti.api.runtime.conf.impl;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.core.Version;
 import com.fasterxml.jackson.databind.BeanDescription;
 import com.fasterxml.jackson.databind.DeserializationConfig;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.Module;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsontype.NamedType;
+import com.fasterxml.jackson.databind.jsontype.TypeResolverBuilder;
 import com.fasterxml.jackson.databind.module.SimpleAbstractTypeResolver;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.activiti.api.model.shared.EmptyResult;
@@ -29,9 +32,12 @@ import org.activiti.api.model.shared.Payload;
 import org.activiti.api.model.shared.Result;
 import org.activiti.api.model.shared.model.VariableInstance;
 import org.activiti.api.runtime.model.impl.VariableInstanceImpl;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+
 
 @Configuration
 @PropertySource("classpath:conf/rest-jackson-configuration.properties") //load default jackson configuration
@@ -67,5 +73,22 @@ public class CommonModelAutoConfiguration {
                                               EmptyResult.class.getSimpleName()));
 
         return module;
+    }
+
+    @Bean
+    @ConditionalOnProperty(
+            name = "spring.activiti.serializePOJOsInVariablesToJson",
+            havingValue = "true",
+            matchIfMissing=true)
+    public Jackson2ObjectMapperBuilderCustomizer configureJackson() {
+
+        return jackson2ObjectMapperBuilder -> {
+
+            TypeResolverBuilder<?> typeResolver = new ObjectMapper.DefaultTypeResolverBuilder(ObjectMapper.DefaultTyping.NON_FINAL);
+            typeResolver = typeResolver.init(JsonTypeInfo.Id.CLASS, null);
+            typeResolver = typeResolver.inclusion(JsonTypeInfo.As.PROPERTY);
+
+            jackson2ObjectMapperBuilder.defaultTyping(typeResolver);
+        };
     }
 }
