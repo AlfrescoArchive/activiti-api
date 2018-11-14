@@ -84,9 +84,21 @@ public class CommonModelAutoConfiguration {
 
         return jackson2ObjectMapperBuilder -> {
 
-            TypeResolverBuilder<?> typeResolver = new ObjectMapper.DefaultTypeResolverBuilder(ObjectMapper.DefaultTyping.NON_FINAL);
-            typeResolver = typeResolver.init(JsonTypeInfo.Id.CLASS, null);
-            typeResolver = typeResolver.inclusion(JsonTypeInfo.As.PROPERTY);
+            TypeResolverBuilder<?> typeResolver = new ObjectMapper.DefaultTypeResolverBuilder(ObjectMapper.DefaultTyping.NON_FINAL) {
+                {
+                    init(JsonTypeInfo.Id.CLASS, null);
+                    inclusion(JsonTypeInfo.As.PROPERTY);
+                }
+
+                //add class type info by default but only for user custom classes
+                //https://stackoverflow.com/questions/12419295/jackson-excluding-type-information-for-containeirs-list-map-collection-durin
+
+                @Override
+                public boolean useForType(JavaType t) {
+                    return !t.isContainerType() && super.useForType(t)
+                            && !t.getRawClass().getName().startsWith("org.activiti") && !t.getRawClass().getName().startsWith("org.spring");
+                }
+            };
 
             jackson2ObjectMapperBuilder.defaultTyping(typeResolver);
         };
