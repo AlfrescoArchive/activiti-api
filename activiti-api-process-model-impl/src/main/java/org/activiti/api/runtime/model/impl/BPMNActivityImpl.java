@@ -48,8 +48,8 @@ public class BPMNActivityImpl extends BPMNElementImpl implements BPMNActivity {
         }
         BPMNActivityImpl that = (BPMNActivityImpl) o;
 
-        return Objects.equals(elementId,
-                that.elementId) &&
+        return Objects.equals(getElementId(),
+                that.getElementId()) &&
                 Objects.equals(activityName,
                         that.activityName) &&
                 Objects.equals(activityType,
@@ -59,7 +59,7 @@ public class BPMNActivityImpl extends BPMNElementImpl implements BPMNActivity {
     @Override
     public int hashCode() {
 
-        return Objects.hash(elementId,
+        return Objects.hash(getElementId(),
                 activityName,
                 activityType);
     }
@@ -69,7 +69,7 @@ public class BPMNActivityImpl extends BPMNElementImpl implements BPMNActivity {
         return "BPMNActivityImpl{" +
                 "activityName='" + activityName + '\'' +
                 ", activityType='" + activityType + '\'' +
-                ", elementId='" + elementId + '\'' +
+                ", elementId='" + getElementId() + '\'' +
                 '}';
     }
 }
