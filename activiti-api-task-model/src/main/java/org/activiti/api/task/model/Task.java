@@ -51,6 +51,8 @@ public interface Task {
 
     String getProcessInstanceId();
 
+    String getProcessInstanceBusinessKey();
+    
     String getParentTaskId();
 
     TaskStatus getStatus();

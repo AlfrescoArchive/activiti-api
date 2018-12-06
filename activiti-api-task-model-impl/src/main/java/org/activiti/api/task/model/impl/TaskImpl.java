@@ -35,6 +35,7 @@ public class TaskImpl implements Task {
     private int priority;
     private String processDefinitionId;
     private String processInstanceId;
+    private String processInstanceBusinessKey;
     private String parentTaskId;
     private String formKey;
 
@@ -51,10 +52,12 @@ public class TaskImpl implements Task {
 
 
 
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public String getOwner() {
         return owner;
     }
@@ -63,6 +66,7 @@ public class TaskImpl implements Task {
         this.owner = owner;
     }
 
+    @Override
     public String getAssignee() {
         return assignee;
     }
@@ -71,6 +75,7 @@ public class TaskImpl implements Task {
         this.assignee = assignee;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -79,6 +84,7 @@ public class TaskImpl implements Task {
         this.name = name;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
@@ -87,6 +93,7 @@ public class TaskImpl implements Task {
         this.description = description;
     }
 
+    @Override
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -95,6 +102,7 @@ public class TaskImpl implements Task {
         this.createdDate = createdDate;
     }
 
+    @Override
     public Date getClaimedDate() {
         return claimedDate;
     }
@@ -103,6 +111,7 @@ public class TaskImpl implements Task {
         this.claimedDate = claimedDate;
     }
 
+    @Override
     public Date getDueDate() {
         return dueDate;
     }
@@ -111,6 +120,7 @@ public class TaskImpl implements Task {
         this.dueDate = dueDate;
     }
 
+    @Override
     public int getPriority() {
         return priority;
     }
@@ -119,6 +129,7 @@ public class TaskImpl implements Task {
         this.priority = priority;
     }
 
+    @Override
     public String getProcessDefinitionId() {
         return processDefinitionId;
     }
@@ -127,6 +138,7 @@ public class TaskImpl implements Task {
         this.processDefinitionId = processDefinitionId;
     }
 
+    @Override
     public String getProcessInstanceId() {
         return processInstanceId;
     }
@@ -135,10 +147,12 @@ public class TaskImpl implements Task {
         this.processInstanceId = processInstanceId;
     }
 
+    @Override
     public TaskStatus getStatus() {
         return status;
     }
 
+    @Override
     public String getParentTaskId() {
         return parentTaskId;
     }
@@ -151,6 +165,7 @@ public class TaskImpl implements Task {
         this.status = status;
     }
 
+    @Override
     public String getFormKey() {
         return formKey;
     }
@@ -159,6 +174,16 @@ public class TaskImpl implements Task {
         this.formKey = formKey;
     }
 
+    @Override
+    public String getProcessInstanceBusinessKey() {
+        return this.processInstanceBusinessKey;
+    }
+
+    
+    public void setProcessInstanceBusinessKey(String processInstanceBusinessKey) {
+        this.processInstanceBusinessKey = processInstanceBusinessKey;
+    }
+    
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -189,6 +214,8 @@ public class TaskImpl implements Task {
                                task.processDefinitionId) &&
                 Objects.equals(processInstanceId,
                                task.processInstanceId) &&
+                Objects.equals(processInstanceBusinessKey,
+                               task.processInstanceBusinessKey) &&
                 Objects.equals(parentTaskId,
                                task.parentTaskId) &&
                 Objects.equals(formKey,
@@ -210,11 +237,12 @@ public class TaskImpl implements Task {
                             priority,
                             processDefinitionId,
                             processInstanceId,
+                            processInstanceBusinessKey,
                             parentTaskId,
                             formKey,
                             status);
     }
-
+    
     @Override
     public String toString() {
         return "TaskImpl{" +
@@ -229,9 +257,11 @@ public class TaskImpl implements Task {
                 ", priority=" + priority +
                 ", processDefinitionId='" + processDefinitionId + '\'' +
                 ", processInstanceId='" + processInstanceId + '\'' +
+                ", processInstanceBusinessKey='" + processInstanceBusinessKey + '\'' +
                 ", parentTaskId='" + parentTaskId + '\'' +
                 ", formKey='" + formKey + '\'' +
                 ", status=" + status +
                 '}';
     }
+
 }
