@@ -21,7 +21,7 @@
   <parent>
     <groupId>org.activiti.api</groupId>
     <artifactId>activiti-api</artifactId>
-    <version>7.0.60</version>
+    <version>7.0.0.Beta4</version>
   </parent>
   <artifactId>activiti-api-dependencies</artifactId>
   <packaging>pom</packaging>
