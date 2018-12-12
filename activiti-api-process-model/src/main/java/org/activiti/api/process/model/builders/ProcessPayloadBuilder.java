@@ -3,6 +3,7 @@ package org.activiti.api.process.model.builders;
 
 import org.activiti.api.process.model.ProcessInstance;
 import org.activiti.api.process.model.payloads.DeleteProcessPayload;
+import org.activiti.api.process.model.payloads.GetSubprocessesPayload;
 import org.activiti.api.process.model.payloads.ResumeProcessPayload;
 import org.activiti.api.process.model.payloads.SuspendProcessPayload;
 
@@ -50,6 +51,14 @@ public class ProcessPayloadBuilder {
 
     public static GetProcessInstancesPayloadBuilder processInstances() {
         return new GetProcessInstancesPayloadBuilder();
+    }
+    
+    public static GetSubprocessesPayload subprocesses(String processInstanceId) {
+        return new GetSubprocessesPayloadBuilder().withProcessInstanceId(processInstanceId).build();
+    }
+    
+    public static GetSubprocessesPayload subprocesses(ProcessInstance processInstance) {
+        return new GetSubprocessesPayloadBuilder().withProcessInstance(processInstance).build();
     }
 
     /* shortcuts - This needs to be justified and validated before adding any new one*/
