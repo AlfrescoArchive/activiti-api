@@ -22,7 +22,6 @@ import org.activiti.api.process.model.ProcessInstance;
 import org.activiti.api.process.model.payloads.DeleteProcessPayload;
 import org.activiti.api.process.model.payloads.GetProcessDefinitionsPayload;
 import org.activiti.api.process.model.payloads.GetProcessInstancesPayload;
-import org.activiti.api.process.model.payloads.GetSubprocessesPayload;
 import org.activiti.api.process.model.payloads.RemoveProcessVariablesPayload;
 import org.activiti.api.process.model.payloads.ResumeProcessPayload;
 import org.activiti.api.process.model.payloads.SetProcessVariablesPayload;
@@ -110,9 +109,4 @@ public interface ProcessAdminRuntime {
 
     void removeVariables(RemoveProcessVariablesPayload removeProcessVariablesPayload);
     
-    /**
-     * Get all subprocesses by pages using payload filters
-     */
-    Page<ProcessInstance> subprocesses(GetSubprocessesPayload getSubprocessesPayload,
-                                       Pageable pageable);
 }
