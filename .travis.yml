@@ -15,6 +15,7 @@ before_script:
 # Enable integration tests
 script:
   - mvn verify -B
+  - mvn clean install -DskipTests -DperformRelease -Dgpg.skip
 
 # Send coverage data
 after_success:
