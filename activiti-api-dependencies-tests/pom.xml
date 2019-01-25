@@ -3,7 +3,7 @@
   <parent>
     <groupId>org.activiti.api</groupId>
     <artifactId>activiti-api</artifactId>
-    <version>7.0.83</version>
+    <version>7.0.0.RC1</version>
   </parent>
   <artifactId>activiti-api-dependencies-tests</artifactId>
   <packaging>pom</packaging>
