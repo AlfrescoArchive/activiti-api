@@ -13,6 +13,7 @@ public class StartProcessPayload implements Payload {
     private String processDefinitionKey;
     private String name;
     private String businessKey;
+    private String description;
     private Map<String, Object> variables = new HashMap<>();
 
     public StartProcessPayload() {
@@ -22,12 +23,14 @@ public class StartProcessPayload implements Payload {
     public StartProcessPayload(String processDefinitionId,
                                String processDefinitionKey,
                                String name,
+                               String description,
                                String businessKey,
                                Map<String, Object> variables) {
         this();
         this.processDefinitionId = processDefinitionId;
         this.processDefinitionKey = processDefinitionKey;
         this.name = name;
+        this.description = description;
         this.businessKey = businessKey;
         this.variables = variables;
     }
@@ -59,5 +62,13 @@ public class StartProcessPayload implements Payload {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

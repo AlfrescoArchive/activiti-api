@@ -11,6 +11,7 @@ public class StartProcessPayloadBuilder {
     private String processDefinitionKey;
     private String name;
     private String businessKey;
+    private String description;
     private Map<String, Object> variables = new HashMap<>();
 
     public StartProcessPayloadBuilder withVariables(Map<String, Object> variables) {
@@ -48,10 +49,16 @@ public class StartProcessPayloadBuilder {
         return this;
     }
 
+    public StartProcessPayloadBuilder withDescription(String description){
+        this.description = description;
+        return this;
+    }
+
     public StartProcessPayload build() {
         return new StartProcessPayload(processDefinitionId,
                 processDefinitionKey,
                 name,
+                description,
                 businessKey,
                 variables);
     }
