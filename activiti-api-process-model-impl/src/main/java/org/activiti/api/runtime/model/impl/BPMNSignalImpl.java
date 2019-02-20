@@ -64,11 +64,6 @@ public class BPMNSignalImpl extends BPMNElementImpl implements BPMNSignal {
         this.signalPayload = signalPayload;
     }
 
-    public String getSignalName() {
-        return (signalPayload != null ? signalPayload.getName() : null);
-    }
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -82,11 +77,11 @@ public class BPMNSignalImpl extends BPMNElementImpl implements BPMNSignal {
         return Objects.equals(getElementId(),
                 that.getElementId()) &&
                 Objects.equals(activityName,
-                        that.activityName) &&
+                        that.getActivityName()) &&
                 Objects.equals(activityType,
-                        that.activityType) &&
-                Objects.equals(getSignalName(),
-                        that.getSignalName());
+                        that.getActivityType()) &&
+                Objects.equals(signalPayload,
+                        that.getSignalPayload());
     }
 
     @Override
@@ -95,7 +90,8 @@ public class BPMNSignalImpl extends BPMNElementImpl implements BPMNSignal {
         return Objects.hash(getElementId(),
                 activityName,
                 activityType,
-                getSignalName());
+                signalPayload != null ? signalPayload.getId() : null,
+                signalPayload != null ? signalPayload.getName() : null		);
     }
 
     @Override
@@ -104,7 +100,7 @@ public class BPMNSignalImpl extends BPMNElementImpl implements BPMNSignal {
                 "activityName='" + activityName + '\'' +
                 ", activityType='" + activityType + '\'' +
                 ", elementId='" + getElementId() + '\'' +
-                ", signalName='" + getSignalName() + '\'' +
+                ", signalPayload='" + (signalPayload !=null ? signalPayload.toString() : null)+ '\'' +
                 '}';
     }
 
