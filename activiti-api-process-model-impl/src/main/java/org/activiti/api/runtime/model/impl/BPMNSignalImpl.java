@@ -23,7 +23,7 @@ import org.activiti.api.process.model.payloads.SignalPayload;
 
 public class BPMNSignalImpl extends BPMNElementImpl implements BPMNSignal {
 	
-	SignalPayload signalPayload;
+	private SignalPayload signalPayload;
 	private String activityName;
     private String activityType;
 
