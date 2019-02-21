@@ -11,6 +11,7 @@ public class GetTasksPayloadBuilder {
     private List<String> groups;
     private String processInstanceId;
     private String parentTaskId;
+    private boolean standAlone;
 
     public GetTasksPayloadBuilder withAssignee(String assignee) {
         this.assignee = assignee;
@@ -40,10 +41,16 @@ public class GetTasksPayloadBuilder {
         return this;
     }
 
+    public GetTasksPayloadBuilder withStandAlone(boolean standAlone) {
+        this.standAlone = standAlone;
+        return this;
+    }
+
     public GetTasksPayload build() {
         return new GetTasksPayload(assignee,
                                    groups,
                                    processInstanceId,
-                                   parentTaskId);
+                                   parentTaskId,
+                                   standAlone);
     }
 }
