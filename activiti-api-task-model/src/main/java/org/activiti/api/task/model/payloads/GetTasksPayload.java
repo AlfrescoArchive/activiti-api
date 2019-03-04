@@ -12,20 +12,24 @@ public class GetTasksPayload implements Payload {
     private List<String> groups;
     private String processInstanceId;
     private String parentTaskId;
+    private boolean standAlone;
 
     public GetTasksPayload() {
         this.id = UUID.randomUUID().toString();
     }
 
+
     public GetTasksPayload(String assigneeId,
                            List<String> groups,
                            String processInstanceId,
-                           String parentTaskId) {
+                           String parentTaskId,
+                           boolean standAlone) {
         this();
         this.assigneeId = assigneeId;
         this.groups = groups;
         this.processInstanceId = processInstanceId;
         this.parentTaskId = parentTaskId;
+        this.standAlone = standAlone;
     }
 
     @Override
@@ -64,4 +68,13 @@ public class GetTasksPayload implements Payload {
     public void setParentTaskId(String parentTaskId) {
         this.parentTaskId = parentTaskId;
     }
+
+    public boolean isStandAlone() {
+        return standAlone;
+    }
+
+    public void setStandAlone(boolean standAlone) {
+        this.standAlone = standAlone;
+    }
+
 }
