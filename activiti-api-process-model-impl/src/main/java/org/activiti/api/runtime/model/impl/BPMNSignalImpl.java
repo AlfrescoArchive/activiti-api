@@ -22,40 +22,17 @@ import org.activiti.api.process.model.BPMNSignal;
 import org.activiti.api.process.model.payloads.SignalPayload;
 
 public class BPMNSignalImpl extends BPMNElementImpl implements BPMNSignal {
-	
-	private SignalPayload signalPayload;
-	private String activityName;
-    private String activityType;
 
+    private SignalPayload signalPayload;
 
     public BPMNSignalImpl() {
     }
 
-    public BPMNSignalImpl(String elementId,
-                          String activityName,
-                          String activityType
-                          ) {
+    public BPMNSignalImpl(String elementId
+    ) {
         this.setElementId(elementId);
-        this.activityName = activityName;
-        this.activityType = activityType;
     }
 
-    public String getActivityName() {
-        return activityName;
-    }
-
-    public void setActivityName(String activityName) {
-        this.activityName = activityName;
-    }
-
-    public String getActivityType() {
-        return activityType;
-    }
-
-    public void setActivityType(String activityType) {
-        this.activityType = activityType;
-    }
-    
     public SignalPayload getSignalPayload() {
         return signalPayload;
     }
@@ -75,33 +52,24 @@ public class BPMNSignalImpl extends BPMNElementImpl implements BPMNSignal {
         BPMNSignalImpl that = (BPMNSignalImpl) o;
 
         return Objects.equals(getElementId(),
-                that.getElementId()) &&
-                Objects.equals(activityName,
-                        that.getActivityName()) &&
-                Objects.equals(activityType,
-                        that.getActivityType()) &&
+                              that.getElementId()) &&
                 Objects.equals(signalPayload,
-                        that.getSignalPayload());
+                               that.getSignalPayload());
     }
 
     @Override
     public int hashCode() {
 
         return Objects.hash(getElementId(),
-                activityName,
-                activityType,
-                signalPayload != null ? signalPayload.getId() : null,
-                signalPayload != null ? signalPayload.getName() : null		);
+                            signalPayload != null ? signalPayload.getId() : null,
+                            signalPayload != null ? signalPayload.getName() : null);
     }
 
     @Override
     public String toString() {
         return "BPMNActivityImpl{" +
-                "activityName='" + activityName + '\'' +
-                ", activityType='" + activityType + '\'' +
                 ", elementId='" + getElementId() + '\'' +
-                ", signalPayload='" + (signalPayload !=null ? signalPayload.toString() : null)+ '\'' +
+                ", signalPayload='" + (signalPayload != null ? signalPayload.toString() : null) + '\'' +
                 '}';
     }
-
 }
