@@ -41,7 +41,7 @@ public class GetTasksPayloadBuilder {
         return this;
     }
 
-    public GetTasksPayloadBuilder withStandAlone(boolean standAlone) {
+    public GetTasksPayloadBuilder isStandAlone(boolean standAlone) {
         this.standAlone = standAlone;
         return this;
     }
