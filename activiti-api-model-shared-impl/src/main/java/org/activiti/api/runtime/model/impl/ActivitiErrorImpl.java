@@ -1,28 +1,27 @@
 package org.activiti.api.runtime.model.impl;
 
 import org.activiti.api.model.shared.model.ActivitiError;
-import org.springframework.http.HttpStatus;
 
 public class ActivitiErrorImpl implements ActivitiError {
 
-    private HttpStatus status;
+    private int status;
     private String message;
 
     public ActivitiErrorImpl () {
     }
 
-    public ActivitiErrorImpl (HttpStatus status,
+    public ActivitiErrorImpl (int status,
                               String message){
         this.status = status;
         this.message = message;
     }
 
     @Override
-    public HttpStatus getStatus(){
+    public int getStatus(){
         return status;
     }
 
-    public void setStatus(HttpStatus status){
+    public void setStatus(int status){
         this.status = status;
     }
 
