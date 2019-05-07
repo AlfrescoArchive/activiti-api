@@ -21,7 +21,7 @@
   <parent>
     <groupId>org.activiti.api</groupId>
     <artifactId>activiti-api-dependencies</artifactId>
-    <version>7.1.20</version>
+    <version>7.1.0.M1</version>
     <relativePath>../activiti-api-dependencies</relativePath>
   </parent>
   <artifactId>activiti-api-task-model</artifactId>
