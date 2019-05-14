@@ -62,4 +62,6 @@ public interface Task {
     Long getDuration();
     
     Integer getProcessDefinitionVersion();
+    
+    String getBusinessKey();
 }
