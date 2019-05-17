@@ -16,8 +16,6 @@
 
 package org.activiti.api.runtime.model.impl;
 
-import java.util.Objects;
-
 import org.activiti.api.process.model.BPMNTimer;
 import org.activiti.api.process.model.payloads.TimerPayload;
 
@@ -41,27 +39,28 @@ public class BPMNTimerImpl extends BPMNElementImpl implements BPMNTimer {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        BPMNTimerImpl that = (BPMNTimerImpl) o;
-
-        return Objects.equals(getElementId(),
-                              that.getElementId()) &&
-                Objects.equals(timerPayload,
-                               that.getTimerPayload());
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((timerPayload == null) ? 0 : timerPayload.hashCode());
+        return result;
     }
 
     @Override
-    public int hashCode() {
-
-        return Objects.hash(getElementId(),
-                            timerPayload != null ? timerPayload.getId() : null,
-                            timerPayload != null ? timerPayload.getName() : null);
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        BPMNTimerImpl other = (BPMNTimerImpl) obj;
+        if (timerPayload == null) {
+            if (other.timerPayload != null)
+                return false;
+        } else if (!timerPayload.equals(other.timerPayload))
+            return false;
+        return true;
     }
 
     @Override
