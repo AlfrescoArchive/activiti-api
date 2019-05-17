@@ -5,9 +5,6 @@ import java.util.Date;
 import org.activiti.api.process.model.payloads.TimerPayload;
 
 public class TimerPayloadBuilder {
-
-    private String id;
-    
     private Date dueDate;
     private Date endDate;
 
@@ -55,8 +52,69 @@ public class TimerPayloadBuilder {
         return this;
     }
     
+    public TimerPayloadBuilder withIsExclusive(boolean isExclusive) {
+        this.isExclusive = isExclusive;
+        return this;
+    }
+    
+    public TimerPayloadBuilder withRetries(int retries) {
+        this.retries = retries;
+        return this;
+    }
+    
+    public TimerPayloadBuilder withMaxIterations(int maxIterations) {
+        this.maxIterations = maxIterations;
+        return this;
+    }
 
+    public TimerPayloadBuilder withRepeat(String repeat) {
+        this.repeat = repeat;
+        return this;
+    }
+ 
+    public TimerPayloadBuilder withJobHandlerType(String jobHandlerType) {
+        this.jobHandlerType = jobHandlerType;
+        return this;
+    }
+    
+    public TimerPayloadBuilder withJobHandlerConfiguration(String jobHandlerConfiguration) {
+        this.jobHandlerConfiguration = jobHandlerConfiguration;
+        return this;
+    }
+
+    public TimerPayloadBuilder withExceptionMessage(String exceptionMessage) {
+        this.exceptionMessage = exceptionMessage;
+        return this;
+    }
+
+    public TimerPayloadBuilder withTenantId(String tenantId) {
+        this.tenantId = tenantId;
+        return this;
+    }
+ 
+    public TimerPayloadBuilder withJobType(String jobType) {
+        this.jobType = jobType;
+        return this;
+    }
+    
     public TimerPayload build() {
-        return new TimerPayload();
+        TimerPayload timerPayload = new TimerPayload();
+        
+        timerPayload.setDuedate(dueDate) ;
+        timerPayload.setEndDate(endDate);
+        timerPayload.setExecutionId(executionId);
+        timerPayload.setProcessInstanceId(processInstanceId);
+        timerPayload.setProcessDefinitionId(processDefinitionId);
+        timerPayload.setExclusive(isExclusive);
+        timerPayload.setRetries(retries);
+        timerPayload.setMaxIterations(maxIterations);
+        timerPayload.setRepeat(repeat);
+        timerPayload.setJobHandlerType(jobHandlerType);
+        timerPayload.setJobHandlerConfiguration(jobHandlerConfiguration);
+        timerPayload.setExceptionMessage(exceptionMessage);
+        timerPayload.setTenantId(tenantId);
+        timerPayload.setJobType(jobType);
+        
+        return timerPayload;
     }
 }
