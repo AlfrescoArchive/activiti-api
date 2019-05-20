@@ -16,18 +16,6 @@
 
 package org.activiti.api.process.model.events;
 
-import org.activiti.api.model.shared.event.RuntimeEvent;
-import org.activiti.api.process.model.BPMNTimer;
+public interface BPMNTimerExecutionFailureEvent extends BPMNTimerEvent {
 
-public interface BPMNTimerEvent extends RuntimeEvent<BPMNTimer, BPMNTimerEvent.TimerEvents> {
-
-    enum TimerEvents {
-        TIMER_SCHEDULED,
-        TIMER_FIRED,
-        JOB_CANCELED,
-        JOB_EXECUTION_SUCCESS,
-        JOB_EXECUTION_FAILURE,
-        JOB_RETRIES_DECREMENTED
-
-    }
 }
