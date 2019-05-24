@@ -10,7 +10,7 @@
   </parent>
   <groupId>org.activiti.api</groupId>
   <artifactId>activiti-api</artifactId>
-  <version>7.1.0-SNAPSHOT</version>
+  <version>7.1.25</version>
 
   <name>Activiti API :: Parent</name>
   <packaging>pom</packaging>
