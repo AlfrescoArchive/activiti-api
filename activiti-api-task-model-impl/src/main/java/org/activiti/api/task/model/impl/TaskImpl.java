@@ -42,6 +42,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
     private Long duration;
     private Integer processDefinitionVersion;
     private String businessKey;
+    private String taskDefinitionKey;
 
     public TaskImpl() {
     }
@@ -202,6 +203,15 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
     public void setBusinessKey(String businessKey) {
         this.businessKey = businessKey;
     }
+    
+    public String getTaskDefinitionKey() {
+        return taskDefinitionKey;
+    }
+
+    public void setTaskDefinitionKey(String taskDefinitionKey) {
+        this.taskDefinitionKey = taskDefinitionKey;
+    }
+    
 
     @Override
     public boolean equals(Object o) {
@@ -248,7 +258,10 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
                 Objects.equals(processDefinitionVersion,
                                task.processDefinitionVersion) &&
                 Objects.equals(businessKey,
-                               task.businessKey);
+                               task.businessKey) &&
+                status == task.status && 
+                Objects.equals(taskDefinitionKey,
+                               task.taskDefinitionKey);
     }
 
     @Override
@@ -271,7 +284,8 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
                             completedDate,
                             duration,
                             processDefinitionVersion,
-                            businessKey);
+                            businessKey,
+                            taskDefinitionKey);
     }
 
     @Override
@@ -293,6 +307,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
                 ", status=" + status +
                 ", processDefinitionVersion=" + processDefinitionVersion +
                 ", businessKey=" + businessKey +
+                ", taskDefinitionKey=" + taskDefinitionKey +
                 '}';
     }
 }
