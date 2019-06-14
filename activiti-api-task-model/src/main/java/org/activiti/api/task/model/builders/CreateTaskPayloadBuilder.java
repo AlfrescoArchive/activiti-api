@@ -17,8 +17,7 @@ public class CreateTaskPayloadBuilder {
     private List<String> candidateUsers = new ArrayList<>();
     private String parentTaskId;
     private String formKey;
-    private String taskDefinitionKey;
-
+ 
     public CreateTaskPayloadBuilder withName(String name) {
         this.name = name;
         return this;
@@ -80,11 +79,6 @@ public class CreateTaskPayloadBuilder {
         return this;
     }
 
-    public CreateTaskPayloadBuilder withTaskDefinitionKey(String taskDefinitionKey) {
-        this.taskDefinitionKey = taskDefinitionKey;
-        return this;
-    }
-    
     public CreateTaskPayload build() {
         return new CreateTaskPayload(name,
                 description,
