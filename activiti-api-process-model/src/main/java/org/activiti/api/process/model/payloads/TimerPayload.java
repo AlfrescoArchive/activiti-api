@@ -13,9 +13,6 @@ public class TimerPayload implements Payload {
     private Date endDate;
 
     private String executionId;
-    private String processInstanceId;
-    private String processDefinitionId;
-
     private boolean isExclusive;
 
     private int retries;   
@@ -67,27 +64,6 @@ public class TimerPayload implements Payload {
     public void setExecutionId(String executionId) {
         this.executionId = executionId;
     }
-
-    
-    public String getProcessInstanceId() {
-        return processInstanceId;
-    }
-
-    
-    public void setProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-    }
-
-    
-    public String getProcessDefinitionId() {
-        return processDefinitionId;
-    }
-
-    
-    public void setProcessDefinitionId(String processDefinitionId) {
-        this.processDefinitionId = processDefinitionId;
-    }
-
     
     public boolean isExclusive() {
         return isExclusive;
@@ -192,8 +168,6 @@ public class TimerPayload implements Payload {
         result = prime * result + ((jobHandlerType == null) ? 0 : jobHandlerType.hashCode());
         result = prime * result + ((jobType == null) ? 0 : jobType.hashCode());
         result = prime * result + maxIterations;
-        result = prime * result + ((processDefinitionId == null) ? 0 : processDefinitionId.hashCode());
-        result = prime * result + ((processInstanceId == null) ? 0 : processInstanceId.hashCode());
         result = prime * result + ((repeat == null) ? 0 : repeat.hashCode());
         result = prime * result + retries;
         result = prime * result + ((tenantId == null) ? 0 : tenantId.hashCode());
@@ -252,16 +226,6 @@ public class TimerPayload implements Payload {
         } else if (!jobType.equals(other.jobType))
             return false;
         if (maxIterations != other.maxIterations)
-            return false;
-        if (processDefinitionId == null) {
-            if (other.processDefinitionId != null)
-                return false;
-        } else if (!processDefinitionId.equals(other.processDefinitionId))
-            return false;
-        if (processInstanceId == null) {
-            if (other.processInstanceId != null)
-                return false;
-        } else if (!processInstanceId.equals(other.processInstanceId))
             return false;
         if (repeat == null) {
             if (other.repeat != null)
