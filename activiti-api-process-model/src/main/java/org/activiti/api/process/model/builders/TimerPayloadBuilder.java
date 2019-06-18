@@ -9,9 +9,6 @@ public class TimerPayloadBuilder {
     private Date endDate;
 
     private String executionId;
-    private String processInstanceId;
-    private String processDefinitionId;
-
     private boolean isExclusive;
 
     private int retries;   
@@ -39,16 +36,6 @@ public class TimerPayloadBuilder {
     
     public TimerPayloadBuilder withExecutionId(String executionId) {
         this.executionId = executionId;
-        return this;
-    }
-    
-    public TimerPayloadBuilder withProcessInstanceId(String processInstanceId) {
-        this.processInstanceId = processInstanceId;
-        return this;
-    }
-    
-    public TimerPayloadBuilder withProcessDefinitionId(String processDefinitionId) {
-        this.processDefinitionId = processDefinitionId;
         return this;
     }
     
@@ -103,8 +90,6 @@ public class TimerPayloadBuilder {
         timerPayload.setDuedate(dueDate) ;
         timerPayload.setEndDate(endDate);
         timerPayload.setExecutionId(executionId);
-        timerPayload.setProcessInstanceId(processInstanceId);
-        timerPayload.setProcessDefinitionId(processDefinitionId);
         timerPayload.setExclusive(isExclusive);
         timerPayload.setRetries(retries);
         timerPayload.setMaxIterations(maxIterations);
