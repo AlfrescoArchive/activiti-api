@@ -15,7 +15,7 @@ public class BPMNTimerCancelledEventImpl extends RuntimeEventImpl<BPMNTimer, BPM
 
     @Override
     public TimerEvents getEventType() {
-        return BPMNTimerEvent.TimerEvents.JOB_CANCELED;
+        return BPMNTimerEvent.TimerEvents.TIMER_CANCELLED;
     }
 
     @Override

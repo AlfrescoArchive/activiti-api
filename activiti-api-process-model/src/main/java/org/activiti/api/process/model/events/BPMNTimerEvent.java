@@ -24,10 +24,10 @@ public interface BPMNTimerEvent extends RuntimeEvent<BPMNTimer, BPMNTimerEvent.T
     enum TimerEvents {
         TIMER_SCHEDULED,
         TIMER_FIRED,
-        JOB_CANCELED,
-        JOB_EXECUTION_SUCCESS,
-        JOB_EXECUTION_FAILURE,
-        JOB_RETRIES_DECREMENTED
+        TIMER_CANCELLED,
+        TIMER_EXECUTED,
+        TIMER_FAILED,
+        TIMER_RETRIES_DECREMENTED
 
     }
 }

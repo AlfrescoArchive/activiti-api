@@ -15,7 +15,7 @@ public class BPMNTimerExecutedEventImpl extends RuntimeEventImpl<BPMNTimer, BPMN
 
     @Override
     public TimerEvents getEventType() {
-        return BPMNTimerEvent.TimerEvents.JOB_EXECUTION_SUCCESS;
+        return BPMNTimerEvent.TimerEvents.TIMER_EXECUTED;
     }
 
     @Override

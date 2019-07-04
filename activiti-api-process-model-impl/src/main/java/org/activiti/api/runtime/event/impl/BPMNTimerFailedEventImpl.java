@@ -15,7 +15,7 @@ public class BPMNTimerFailedEventImpl extends RuntimeEventImpl<BPMNTimer, BPMNTi
 
     @Override
     public TimerEvents getEventType() {
-        return BPMNTimerEvent.TimerEvents.JOB_EXECUTION_FAILURE;
+        return BPMNTimerEvent.TimerEvents.TIMER_FAILED;
     }
 
     @Override

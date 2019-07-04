@@ -15,7 +15,7 @@ public class BPMNTimerRetriesDecrementedEventImpl extends RuntimeEventImpl<BPMNT
 
     @Override
     public TimerEvents getEventType() {
-        return BPMNTimerEvent.TimerEvents.JOB_RETRIES_DECREMENTED;
+        return BPMNTimerEvent.TimerEvents.TIMER_RETRIES_DECREMENTED;
     }
 
     @Override
