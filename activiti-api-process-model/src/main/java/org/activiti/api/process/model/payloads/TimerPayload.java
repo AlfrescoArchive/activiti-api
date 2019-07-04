@@ -7,25 +7,15 @@ import org.activiti.api.model.shared.Payload;
 
 public class TimerPayload implements Payload {
 
-    private String id;
-    
+    private String id;    
     private Date dueDate;
     private Date endDate;
-
-    private String executionId;
-    private boolean isExclusive;
-
-    private int retries;   
-    
+    private int retries;       
     private int maxIterations;
     private String repeat;
-
     protected String jobHandlerType;
-    protected String jobHandlerConfiguration;
-    
+    protected String jobHandlerConfiguration;    
     protected String exceptionMessage;
-
-    protected String tenantId;
     protected String jobType; 
 
     public TimerPayload() {
@@ -55,26 +45,6 @@ public class TimerPayload implements Payload {
         this.endDate = endDate;
     }
 
-    
-    public String getExecutionId() {
-        return executionId;
-    }
-
-    
-    public void setExecutionId(String executionId) {
-        this.executionId = executionId;
-    }
-    
-    public boolean isExclusive() {
-        return isExclusive;
-    }
-
-    
-    public void setExclusive(boolean isExclusive) {
-        this.isExclusive = isExclusive;
-    }
-
-    
     public int getRetries() {
         return retries;
     }
@@ -134,17 +104,6 @@ public class TimerPayload implements Payload {
         this.exceptionMessage = exceptionMessage;
     }
 
-    
-    public String getTenantId() {
-        return tenantId;
-    }
-
-    
-    public void setTenantId(String tenantId) {
-        this.tenantId = tenantId;
-    }
-
-    
     public String getJobType() {
         return jobType;
     }
@@ -161,16 +120,13 @@ public class TimerPayload implements Payload {
         result = prime * result + ((dueDate == null) ? 0 : dueDate.hashCode());
         result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
         result = prime * result + ((exceptionMessage == null) ? 0 : exceptionMessage.hashCode());
-        result = prime * result + ((executionId == null) ? 0 : executionId.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + (isExclusive ? 1231 : 1237);
         result = prime * result + ((jobHandlerConfiguration == null) ? 0 : jobHandlerConfiguration.hashCode());
         result = prime * result + ((jobHandlerType == null) ? 0 : jobHandlerType.hashCode());
         result = prime * result + ((jobType == null) ? 0 : jobType.hashCode());
         result = prime * result + maxIterations;
         result = prime * result + ((repeat == null) ? 0 : repeat.hashCode());
         result = prime * result + retries;
-        result = prime * result + ((tenantId == null) ? 0 : tenantId.hashCode());
         return result;
     }
 
@@ -198,17 +154,10 @@ public class TimerPayload implements Payload {
                 return false;
         } else if (!exceptionMessage.equals(other.exceptionMessage))
             return false;
-        if (executionId == null) {
-            if (other.executionId != null)
-                return false;
-        } else if (!executionId.equals(other.executionId))
-            return false;
         if (id == null) {
             if (other.id != null)
                 return false;
         } else if (!id.equals(other.id))
-            return false;
-        if (isExclusive != other.isExclusive)
             return false;
         if (jobHandlerConfiguration == null) {
             if (other.jobHandlerConfiguration != null)
@@ -233,11 +182,6 @@ public class TimerPayload implements Payload {
         } else if (!repeat.equals(other.repeat))
             return false;
         if (retries != other.retries)
-            return false;
-        if (tenantId == null) {
-            if (other.tenantId != null)
-                return false;
-        } else if (!tenantId.equals(other.tenantId))
             return false;
         return true;
     }
