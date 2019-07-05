@@ -13,10 +13,9 @@ public class TimerPayload implements Payload {
     private int retries;       
     private int maxIterations;
     private String repeat;
-    protected String jobHandlerType;
-    protected String jobHandlerConfiguration;    
+    protected String activityId;    
     protected String exceptionMessage;
-    protected String jobType; 
+
 
     public TimerPayload() {
         this.id = UUID.randomUUID().toString();
@@ -73,27 +72,14 @@ public class TimerPayload implements Payload {
     public void setRepeat(String repeat) {
         this.repeat = repeat;
     }
-
     
-    public String getJobHandlerType() {
-        return jobHandlerType;
+    public String getActivityId() {
+        return activityId ;
     }
-
     
-    public void setJobHandlerType(String jobHandlerType) {
-        this.jobHandlerType = jobHandlerType;
+    public void setActivityId(String activityId) {
+        this.activityId  = activityId;
     }
-
-    
-    public String getJobHandlerConfiguration() {
-        return jobHandlerConfiguration;
-    }
-
-    
-    public void setJobHandlerConfiguration(String jobHandlerConfiguration) {
-        this.jobHandlerConfiguration = jobHandlerConfiguration;
-    }
-
     
     public String getExceptionMessage() {
         return exceptionMessage;
@@ -102,15 +88,6 @@ public class TimerPayload implements Payload {
     
     public void setExceptionMessage(String exceptionMessage) {
         this.exceptionMessage = exceptionMessage;
-    }
-
-    public String getJobType() {
-        return jobType;
-    }
-
-    
-    public void setJobType(String jobType) {
-        this.jobType = jobType;
     }
     
     @Override
@@ -121,9 +98,7 @@ public class TimerPayload implements Payload {
         result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
         result = prime * result + ((exceptionMessage == null) ? 0 : exceptionMessage.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((jobHandlerConfiguration == null) ? 0 : jobHandlerConfiguration.hashCode());
-        result = prime * result + ((jobHandlerType == null) ? 0 : jobHandlerType.hashCode());
-        result = prime * result + ((jobType == null) ? 0 : jobType.hashCode());
+        result = prime * result + ((activityId == null) ? 0 : activityId.hashCode());
         result = prime * result + maxIterations;
         result = prime * result + ((repeat == null) ? 0 : repeat.hashCode());
         result = prime * result + retries;
@@ -159,20 +134,10 @@ public class TimerPayload implements Payload {
                 return false;
         } else if (!id.equals(other.id))
             return false;
-        if (jobHandlerConfiguration == null) {
-            if (other.jobHandlerConfiguration != null)
+        if (activityId == null) {
+            if (other.activityId != null)
                 return false;
-        } else if (!jobHandlerConfiguration.equals(other.jobHandlerConfiguration))
-            return false;
-        if (jobHandlerType == null) {
-            if (other.jobHandlerType != null)
-                return false;
-        } else if (!jobHandlerType.equals(other.jobHandlerType))
-            return false;
-        if (jobType == null) {
-            if (other.jobType != null)
-                return false;
-        } else if (!jobType.equals(other.jobType))
+        } else if (!activityId.equals(other.activityId))
             return false;
         if (maxIterations != other.maxIterations)
             return false;
