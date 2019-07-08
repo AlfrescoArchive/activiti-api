@@ -1,8 +1,6 @@
 package org.activiti.api.process.model.payloads;
-
 import java.util.Date;
 import java.util.UUID;
-
 import org.activiti.api.model.shared.Payload;
 
 public class TimerPayload implements Payload {
@@ -13,9 +11,7 @@ public class TimerPayload implements Payload {
     private int retries;       
     private int maxIterations;
     private String repeat;
-    protected String activityId;    
-    protected String exceptionMessage;
-
+    private String exceptionMessage;
 
     public TimerPayload() {
         this.id = UUID.randomUUID().toString();
@@ -29,8 +25,7 @@ public class TimerPayload implements Payload {
     public Date getDuedate() {
         return dueDate;
     }
-
-    
+   
     public void setDuedate(Date dueDate) {
         this.dueDate = dueDate;
     }
@@ -38,8 +33,7 @@ public class TimerPayload implements Payload {
     public Date getEndDate() {
         return endDate;
     }
-
-    
+  
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
@@ -47,45 +41,31 @@ public class TimerPayload implements Payload {
     public int getRetries() {
         return retries;
     }
-
-    
+   
     public void setRetries(int retries) {
         this.retries = retries;
     }
-
     
     public int getMaxIterations() {
         return maxIterations;
     }
-
-    
+   
     public void setMaxIterations(int maxIterations) {
         this.maxIterations = maxIterations;
     }
-
-    
+ 
     public String getRepeat() {
         return repeat;
     }
 
-    
     public void setRepeat(String repeat) {
         this.repeat = repeat;
-    }
-    
-    public String getActivityId() {
-        return activityId ;
-    }
-    
-    public void setActivityId(String activityId) {
-        this.activityId  = activityId;
     }
     
     public String getExceptionMessage() {
         return exceptionMessage;
     }
-
-    
+ 
     public void setExceptionMessage(String exceptionMessage) {
         this.exceptionMessage = exceptionMessage;
     }
@@ -98,7 +78,6 @@ public class TimerPayload implements Payload {
         result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
         result = prime * result + ((exceptionMessage == null) ? 0 : exceptionMessage.hashCode());
         result = prime * result + ((id == null) ? 0 : id.hashCode());
-        result = prime * result + ((activityId == null) ? 0 : activityId.hashCode());
         result = prime * result + maxIterations;
         result = prime * result + ((repeat == null) ? 0 : repeat.hashCode());
         result = prime * result + retries;
@@ -133,11 +112,6 @@ public class TimerPayload implements Payload {
             if (other.id != null)
                 return false;
         } else if (!id.equals(other.id))
-            return false;
-        if (activityId == null) {
-            if (other.activityId != null)
-                return false;
-        } else if (!activityId.equals(other.activityId))
             return false;
         if (maxIterations != other.maxIterations)
             return false;
