@@ -5,12 +5,12 @@
   <parent>
     <groupId>org.activiti.build</groupId>
     <artifactId>activiti-parent</artifactId>
-    <version>7.1.14</version> <!-- using fixed version for CI/CD -->
+    <version>7.1.M3</version> <!-- using fixed version for CI/CD -->
     <relativePath/>
   </parent>
   <groupId>org.activiti.api</groupId>
   <artifactId>activiti-api</artifactId>
-  <version>7.1.31</version>
+  <version>7.1.M3</version>
 
   <name>Activiti API :: Parent</name>
   <packaging>pom</packaging>
@@ -57,8 +57,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-    <activiti-api.version>${project.version}</activiti-api.version>
-    <activiti-build.version>7.1.14</activiti-build.version>
+    <activiti-api.version>7.1.M3</activiti-api.version>
+    <activiti-build.version>7.1.M3</activiti-build.version>
 
   </properties>
 
