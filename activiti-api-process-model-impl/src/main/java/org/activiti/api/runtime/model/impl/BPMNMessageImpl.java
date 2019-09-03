@@ -19,11 +19,11 @@ package org.activiti.api.runtime.model.impl;
 import java.util.Objects;
 
 import org.activiti.api.process.model.BPMNMessage;
-import org.activiti.api.process.model.payloads.MessagePayload;
+import org.activiti.api.process.model.payloads.MessageEventPayload;
 
 public class BPMNMessageImpl extends BPMNElementImpl implements BPMNMessage {
 
-    private MessagePayload messagePayload;
+    private MessageEventPayload messagePayload;
 
     public BPMNMessageImpl() {
     }
@@ -32,11 +32,11 @@ public class BPMNMessageImpl extends BPMNElementImpl implements BPMNMessage {
         this.setElementId(elementId);
     }
 
-    public MessagePayload getMessagePayload() {
+    public MessageEventPayload getMessagePayload() {
         return messagePayload;
     }
 
-    public void setSignalPayload(MessagePayload messagePayload) {
+    public void setMessagePayload(MessageEventPayload messagePayload) {
         this.messagePayload = messagePayload;
     }
 
