@@ -33,7 +33,7 @@ public class MessageEventPayloadBuilder {
         Objects.requireNonNull(messagePayload, "messagePayload must not be null");
 
         return new MessageEventPayloadBuilder().withName(messagePayload.getName())
-                                               .withBussinessKey(messagePayload.getBusinessKey())
+                                               .withBusinessKey(messagePayload.getBusinessKey())
                                                .withCorrelationKey(messagePayload.getCorrelationKey())
                                                .withVariables(messagePayload.getVariables());
     }
@@ -72,7 +72,7 @@ public class MessageEventPayloadBuilder {
         return this;
     }
     
-    public MessageEventPayloadBuilder withBussinessKey(String businessKey) {
+    public MessageEventPayloadBuilder withBusinessKey(String businessKey) {
         this.businessKey = businessKey;
 
         return this;
