@@ -15,7 +15,7 @@ public class BPMNMessageWaitingEventImpl extends RuntimeEventImpl<BPMNMessage, B
 
     @Override
     public MessageEvents getEventType() {
-        return BPMNMessageEvent.MessageEvents.ACTIVITY_MESSAGE_WAITING;
+        return BPMNMessageEvent.MessageEvents.MESSAGE_WAITING;
     }
 
     @Override

@@ -15,7 +15,7 @@ public class BPMNMessageSentEventImpl extends RuntimeEventImpl<BPMNMessage, BPMN
 
     @Override
     public MessageEvents getEventType() {
-        return BPMNMessageEvent.MessageEvents.ACTIVITY_MESSAGE_SENT;
+        return BPMNMessageEvent.MessageEvents.MESSAGE_SENT;
     }
 
     @Override

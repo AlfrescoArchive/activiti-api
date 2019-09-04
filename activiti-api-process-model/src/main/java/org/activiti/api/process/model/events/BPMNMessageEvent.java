@@ -22,8 +22,8 @@ import org.activiti.api.process.model.BPMNMessage;
 public interface BPMNMessageEvent extends RuntimeEvent<BPMNMessage, BPMNMessageEvent.MessageEvents> {
 
     enum MessageEvents {
-        ACTIVITY_MESSAGE_WAITING,
-        ACTIVITY_MESSAGE_RECEIVED,
-        ACTIVITY_MESSAGE_SENT
+        MESSAGE_WAITING,
+        MESSAGE_RECEIVED,
+        MESSAGE_SENT
     }
 }
