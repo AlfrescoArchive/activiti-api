@@ -1,6 +1,22 @@
+/*
+ * Copyright 2018 Alfresco, Inc. and/or its affiliates.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package org.activiti.api.runtime.shared.security;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface SecurityManager {
 
@@ -13,21 +29,21 @@ public interface SecurityManager {
     String getAuthenticatedUserId();
     
     /**
-     * Get currently authenticated user group names from application security context 
+     * Get group names for currently authenticated user from application security context 
      * 
      * @return list of group names the current user is member of
      * 
-     * @throws SecurityException if principal security context does not exists.
+     * @throws SecurityException if principal security context is not valid
      */
-    Collection<String> getAuthenticatedUserGroups() throws SecurityException;
+    List<String> getAuthenticatedUserGroups() throws SecurityException;
     
     /**
-     * Get currently authenticated user list of role names from application security context 
+     * Get list of role names for currently authenticated user from application security context 
      * 
      * @return list of roles names or empty collection
      * 
-     * @throws SecurityException if principal security context does not exists.
+     * @throws SecurityException if principal security context is not valid
      */
-    Collection<String> getAuthenticatedUserRoles() throws SecurityException;
+    List<String> getAuthenticatedUserRoles() throws SecurityException;
 
 }
