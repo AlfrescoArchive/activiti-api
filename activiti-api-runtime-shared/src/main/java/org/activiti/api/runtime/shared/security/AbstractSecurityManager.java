@@ -24,14 +24,17 @@ public abstract class AbstractSecurityManager implements SecurityManager {
 
     private final SecurityContextPrincipalProvider securityContextPrincipalProvider;
     private final PrincipalIdentityProvider principalIdentityProvider;
-    private final PrincipalDetailsProvider principalDetailsProvider;
+    private final PrincipalGroupsProvider principalGroupsProvider;
+    private final PrincipalRolesProvider principalRolesProvider;
 
     public AbstractSecurityManager(SecurityContextPrincipalProvider securityContextPrincipalProvider,
                                    PrincipalIdentityProvider principalIdentityProvider,
-                                   PrincipalDetailsProvider principalDetailsProvider) {
+                                   PrincipalGroupsProvider principalGroupsProvider,
+                                   PrincipalRolesProvider principalRolesProvider) {
         this.securityContextPrincipalProvider = securityContextPrincipalProvider;
         this.principalIdentityProvider = principalIdentityProvider;
-        this.principalDetailsProvider = principalDetailsProvider;
+        this.principalGroupsProvider = principalGroupsProvider;
+        this.principalRolesProvider = principalRolesProvider;
     }
 
     @Override
@@ -44,14 +47,14 @@ public abstract class AbstractSecurityManager implements SecurityManager {
     @Override
     public List<String> getAuthenticatedUserGroups() {
         return securityContextPrincipalProvider.getCurrentPrincipal()
-                                               .map(principalDetailsProvider::getGroups)
+                                               .map(principalGroupsProvider::getGroups)
                                                .orElseThrow(this::securityException);
     }
 
     @Override
     public List<String> getAuthenticatedUserRoles() {
         return securityContextPrincipalProvider.getCurrentPrincipal()
-                                               .map(principalDetailsProvider::getRoles)
+                                               .map(principalRolesProvider::getRoles)
                                                .orElseThrow(this::securityException);
     }
     

@@ -19,9 +19,8 @@ package org.activiti.api.runtime.shared.security;
 import java.security.Principal;
 import java.util.List;
 
-public interface PrincipalDetailsProvider {
+public interface PrincipalGroupsProvider {
     
-    List<String> getGroups(Principal principal);
-    
-    List<String> getRoles(Principal principal);
+   List<String> getGroups(Principal principal);
+
 }
