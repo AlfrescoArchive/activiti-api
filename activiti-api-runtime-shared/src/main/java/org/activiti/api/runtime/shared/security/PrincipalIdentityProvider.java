@@ -17,11 +17,14 @@
 package org.activiti.api.runtime.shared.security;
 
 import java.security.Principal;
+import java.util.Optional;
 
 public interface PrincipalIdentityProvider {
     
     default String getUserId(Principal principal) {
-        return principal.getName();
+        return Optional.of(principal)
+                       .map(Principal::getName)
+                       .orElseThrow(() -> new SecurityException("Invalid security principal name"));
     };
 
 }
