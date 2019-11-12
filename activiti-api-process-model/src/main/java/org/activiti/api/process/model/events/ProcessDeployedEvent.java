@@ -16,9 +16,7 @@
 
 package org.activiti.api.process.model.events;
 
-import org.activiti.api.process.model.ProcessDefinition;
-
-public interface ProcessDeployedEvent extends ProcessDefinitionEvent<ProcessDefinition> {
+public interface ProcessDeployedEvent extends ProcessDefinitionEvent {
 
     String getProcessModelContent();
 

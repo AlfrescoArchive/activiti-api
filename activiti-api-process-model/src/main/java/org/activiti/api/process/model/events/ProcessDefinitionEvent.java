@@ -17,8 +17,9 @@
 package org.activiti.api.process.model.events;
 
 import org.activiti.api.model.shared.event.RuntimeEvent;
+import org.activiti.api.process.model.ProcessDefinition;
 
-public interface ProcessDefinitionEvent<ENTITY_TYPE> extends RuntimeEvent<ENTITY_TYPE, ProcessDefinitionEvent.ProcessDefinitionEvents> {
+public interface ProcessDefinitionEvent extends RuntimeEvent<ProcessDefinition, ProcessDefinitionEvent.ProcessDefinitionEvents> {
 
     enum ProcessDefinitionEvents {
 
