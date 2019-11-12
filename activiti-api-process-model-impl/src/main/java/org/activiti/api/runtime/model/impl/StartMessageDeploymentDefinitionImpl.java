@@ -18,13 +18,13 @@ package org.activiti.api.runtime.model.impl;
 
 import java.util.Objects;
 
-import org.activiti.api.process.model.MessageSubscription;
 import org.activiti.api.process.model.ProcessDefinition;
 import org.activiti.api.process.model.StartMessageDeploymentDefinition;
+import org.activiti.api.process.model.StartMessageSubscription;
 
 public class StartMessageDeploymentDefinitionImpl implements StartMessageDeploymentDefinition {
     
-    private MessageSubscription messageEventSubscription;
+    private StartMessageSubscription messageEventSubscription;
 
     private ProcessDefinition processDefinition;
 
@@ -40,7 +40,7 @@ public class StartMessageDeploymentDefinitionImpl implements StartMessageDeploym
         return processDefinition;
     }
     
-    public MessageSubscription getMessageEventSubscription() {
+    public StartMessageSubscription getMessageSubscription() {
         return messageEventSubscription;
     }
 
@@ -94,7 +94,7 @@ public class StartMessageDeploymentDefinitionImpl implements StartMessageDeploym
      */
     public static final class Builder {
 
-        private MessageSubscription messageEventSubscription;
+        private StartMessageSubscription messageEventSubscription;
         private ProcessDefinition processDefinition;
 
         public Builder() {
@@ -110,7 +110,7 @@ public class StartMessageDeploymentDefinitionImpl implements StartMessageDeploym
         * @param messageEventSubscription field to set
         * @return builder
         */
-        public Builder withMessageEventSubscription(MessageSubscription messageEventSubscription) {
+        public Builder withMessageEventSubscription(StartMessageSubscription messageEventSubscription) {
             this.messageEventSubscription = messageEventSubscription;
             return this;
         }

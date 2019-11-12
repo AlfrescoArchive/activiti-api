@@ -27,6 +27,7 @@ import org.activiti.api.process.model.MessageSubscription;
 import org.activiti.api.process.model.ProcessDefinition;
 import org.activiti.api.process.model.ProcessInstance;
 import org.activiti.api.process.model.StartMessageDeploymentDefinition;
+import org.activiti.api.process.model.StartMessageSubscription;
 import org.activiti.api.process.model.events.StartMessageDeployedEvent;
 import org.activiti.api.process.model.payloads.DeleteProcessPayload;
 import org.activiti.api.process.model.payloads.GetProcessDefinitionsPayload;
@@ -56,6 +57,7 @@ import org.activiti.api.runtime.model.impl.MessageSubscriptionImpl;
 import org.activiti.api.runtime.model.impl.ProcessDefinitionImpl;
 import org.activiti.api.runtime.model.impl.ProcessInstanceImpl;
 import org.activiti.api.runtime.model.impl.StartMessageDeploymentDefinitionImpl;
+import org.activiti.api.runtime.model.impl.StartMessageSubscriptionImpl;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -110,6 +112,8 @@ public class ProcessModelAutoConfiguration {
                             BPMNErrorImpl.class);
         resolver.addMapping(MessageSubscription.class,
                             MessageSubscriptionImpl.class);
+        resolver.addMapping(StartMessageSubscription.class,
+                            StartMessageSubscriptionImpl.class);
         resolver.addMapping(StartMessageDeployedEvent.class,
                             StartMessageDeployedEventImpl.class);
         resolver.addMapping(StartMessageDeploymentDefinition.class,
