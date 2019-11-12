@@ -16,10 +16,13 @@
 
 package org.activiti.api.process.model.events;
 
-import org.activiti.api.process.model.ProcessDefinition;
+import org.activiti.api.process.model.StartMessageDeploymentDefinition;
 
-public interface ProcessDeployedEvent extends ProcessDefinitionEvent<ProcessDefinition> {
+public interface StartMessageDeployedEvent extends MessageDefinitionEvent<StartMessageDeploymentDefinition> {
 
-    String getProcessModelContent();
-
+    @Override
+    default MessageDefinitionEvents getEventType() {
+        return MessageDefinitionEvents.START_MESSAGE_DEPLOYED;
+    }
+    
 }

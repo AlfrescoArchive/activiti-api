@@ -16,10 +16,14 @@
 
 package org.activiti.api.process.model.events;
 
-import org.activiti.api.process.model.ProcessDefinition;
+import org.activiti.api.model.shared.event.RuntimeEvent;
 
-public interface ProcessDeployedEvent extends ProcessDefinitionEvent<ProcessDefinition> {
+public interface MessageDefinitionEvent<ENTITY_TYPE> extends RuntimeEvent<ENTITY_TYPE, MessageDefinitionEvent.MessageDefinitionEvents> {
 
-    String getProcessModelContent();
+    enum MessageDefinitionEvents {
+
+        START_MESSAGE_DEPLOYED
+        
+    }
 
 }

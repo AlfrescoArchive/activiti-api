@@ -17,14 +17,13 @@
 package org.activiti.api.process.model.events;
 
 import org.activiti.api.model.shared.event.RuntimeEvent;
-import org.activiti.api.process.model.ProcessDefinition;
 
-public interface ProcessDefinitionEvent extends RuntimeEvent<ProcessDefinition, ProcessDefinitionEvent.ProcessDefinitionEvents> {
+public interface ProcessDefinitionEvent<ENTITY_TYPE> extends RuntimeEvent<ENTITY_TYPE, ProcessDefinitionEvent.ProcessDefinitionEvents> {
 
     enum ProcessDefinitionEvents {
 
         PROCESS_DEPLOYED
-
+        
     }
 
 }
