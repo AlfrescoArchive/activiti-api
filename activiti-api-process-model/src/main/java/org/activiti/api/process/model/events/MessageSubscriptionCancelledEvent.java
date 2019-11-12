@@ -16,6 +16,9 @@
 
 package org.activiti.api.process.model.events;
 
-public interface BPMNMessageCancelledEvent extends BPMNMessageEvent {
+public interface MessageSubscriptionCancelledEvent extends MessageSubscriptionEvent {
 
+    default MessageSubscriptionEvents getEventType() {
+        return MessageSubscriptionEvent.MessageSubscriptionEvents.MESSAGE_SUBSCRIPTION_CANCELLED;
+    }
 }

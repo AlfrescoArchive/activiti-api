@@ -2,7 +2,7 @@ package org.activiti.api.process.model;
 
 import java.util.Date;
 
-public interface MessageEventSubscription {
+public interface MessageSubscription {
 
     String getId();
 
@@ -11,6 +11,8 @@ public interface MessageEventSubscription {
     String getExecutionId();
 
     String getProcessInstanceId();
+    
+    String getBusinessKey();
 
     String getConfiguration();
 

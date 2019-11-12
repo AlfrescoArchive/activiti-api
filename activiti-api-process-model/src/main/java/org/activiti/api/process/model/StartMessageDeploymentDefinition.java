@@ -5,5 +5,5 @@ public interface StartMessageDeploymentDefinition {
 
     ProcessDefinition getProcessDefinition();
 
-    MessageEventSubscription getMessageEventSubscription();
+    MessageSubscription getMessageEventSubscription();
 }

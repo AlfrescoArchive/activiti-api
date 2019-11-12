@@ -23,7 +23,7 @@ import org.activiti.api.process.model.BPMNSequenceFlow;
 import org.activiti.api.process.model.BPMNSignal;
 import org.activiti.api.process.model.BPMNTimer;
 import org.activiti.api.process.model.IntegrationContext;
-import org.activiti.api.process.model.MessageEventSubscription;
+import org.activiti.api.process.model.MessageSubscription;
 import org.activiti.api.process.model.ProcessDefinition;
 import org.activiti.api.process.model.ProcessInstance;
 import org.activiti.api.process.model.StartMessageDeploymentDefinition;
@@ -52,7 +52,7 @@ import org.activiti.api.runtime.model.impl.BPMNSequenceFlowImpl;
 import org.activiti.api.runtime.model.impl.BPMNSignalImpl;
 import org.activiti.api.runtime.model.impl.BPMNTimerImpl;
 import org.activiti.api.runtime.model.impl.IntegrationContextImpl;
-import org.activiti.api.runtime.model.impl.MessageEventSubscriptionImpl;
+import org.activiti.api.runtime.model.impl.MessageSubscriptionImpl;
 import org.activiti.api.runtime.model.impl.ProcessDefinitionImpl;
 import org.activiti.api.runtime.model.impl.ProcessInstanceImpl;
 import org.activiti.api.runtime.model.impl.StartMessageDeploymentDefinitionImpl;
@@ -108,8 +108,8 @@ public class ProcessModelAutoConfiguration {
                             BPMNMessageImpl.class);
         resolver.addMapping(BPMNError.class,
                             BPMNErrorImpl.class);
-        resolver.addMapping(MessageEventSubscription.class,
-                            MessageEventSubscriptionImpl.class);
+        resolver.addMapping(MessageSubscription.class,
+                            MessageSubscriptionImpl.class);
         resolver.addMapping(StartMessageDeployedEvent.class,
                             StartMessageDeployedEventImpl.class);
         resolver.addMapping(StartMessageDeploymentDefinition.class,
