@@ -59,10 +59,12 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.id = id;
     }
 
+    @Override
     public String getId() {
         return id;
     }
 
+    @Override
     public String getOwner() {
         return owner;
     }
@@ -71,6 +73,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.owner = owner;
     }
 
+    @Override
     public String getAssignee() {
         return assignee;
     }
@@ -79,6 +82,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.assignee = assignee;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -87,6 +91,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.name = name;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
@@ -95,6 +100,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.description = description;
     }
 
+    @Override
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -103,6 +109,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.createdDate = createdDate;
     }
 
+    @Override
     public Date getClaimedDate() {
         return claimedDate;
     }
@@ -111,6 +118,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.claimedDate = claimedDate;
     }
 
+    @Override
     public Date getDueDate() {
         return dueDate;
     }
@@ -119,6 +127,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.dueDate = dueDate;
     }
 
+    @Override
     public int getPriority() {
         return priority;
     }
@@ -127,6 +136,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.priority = priority;
     }
 
+    @Override
     public String getProcessDefinitionId() {
         return processDefinitionId;
     }
@@ -135,6 +145,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.processDefinitionId = processDefinitionId;
     }
 
+    @Override
     public String getProcessInstanceId() {
         return processInstanceId;
     }
@@ -143,10 +154,12 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.processInstanceId = processInstanceId;
     }
 
+    @Override
     public TaskStatus getStatus() {
         return status;
     }
 
+    @Override
     public String getParentTaskId() {
         return parentTaskId;
     }
@@ -159,6 +172,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.status = status;
     }
 
+    @Override
     public String getFormKey() {
         return formKey;
     }
@@ -167,6 +181,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.formKey = formKey;
     }
 
+    @Override
     public Date getCompletedDate() {
         return completedDate;
     }
@@ -175,6 +190,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.completedDate = completedDate;
     }
 
+    @Override
     public Long getDuration() {
         return duration;
     }
@@ -183,6 +199,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.duration = duration;
     }
     
+    @Override
     public Integer getProcessDefinitionVersion() { 
         return processDefinitionVersion; 
     }
@@ -191,6 +208,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.processDefinitionVersion = processDefinitionVersion;
     }
     
+    @Override
     public String getBusinessKey() {
         return businessKey;
     }
@@ -204,6 +222,7 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.businessKey = businessKey;
     }
     
+    @Override
     public String getTaskDefinitionKey() {
         return taskDefinitionKey;
     }
@@ -259,7 +278,6 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
                                task.processDefinitionVersion) &&
                 Objects.equals(businessKey,
                                task.businessKey) &&
-                status == task.status && 
                 Objects.equals(taskDefinitionKey,
                                task.taskDefinitionKey);
     }
