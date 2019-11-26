@@ -231,7 +231,6 @@ public class TaskImpl extends ApplicationElementImpl implements Task {
         this.taskDefinitionKey = taskDefinitionKey;
     }
     
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
